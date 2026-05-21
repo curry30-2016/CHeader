@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModHeader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="logo">ModHeader</h1>
+      <div class="header-actions">
+        <button class="btn-icon" id="optionsBtn" title="Options">&#9881;</button>
+      </div>
+    </div>
+
+    <!-- Global Toggle -->
+    <div class="toggle-bar">
+      <label class="toggle-label">
+        <span>Enable ModHeader</span>
+        <input type="checkbox" id="globalToggle">
+        <span class="toggle-switch"></span>
+      </label>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-section">
+      <div class="profile-row">
+        <label class="profile-label">Profile</label>
+        <select id="profileSelect" class="profile-select"></select>
+        <div class="profile-actions">
+          <button class="btn-sm" id="addProfileBtn" title="New Profile">+</button>
+          <button class="btn-sm btn-danger" id="deleteProfileBtn" title="Delete Profile">&times;</button>
+        </div>
+      </div>
+      <div class="profile-rename" id="profileRename" style="display:none;">
+        <input type="text" id="profileNameInput" class="input" placeholder="Profile name">
+        <button class="btn-sm" id="renameProfileBtn">Rename</button>
+      </div>
+    </div>
+
+    <!-- Tab Bar -->
+    <div class="tab-bar">
+      <button class="tab active" data-tab="request">Request Headers</button>
+      <button class="tab" data-tab="response">Response Headers</button>
+    </div>
+
+    <!-- URL Filter -->
+    <div class="filter-section">
+      <select id="filterType" class="filter-select">
+        <option value="all">All URLs</option>
+        <option value="contains">URL contains</option>
+        <option value="prefix">URL starts with</option>
+        <option value="regex">URL matches regex</option>
+        <option value="exact">URL equals</option>
+      </select>
+      <input type="text" id="filterValue" class="input filter-input" placeholder="Filter value..." style="display:none;">
+    </div>
+
+    <!-- Header List -->
+    <div class="header-list" id="headerList">
+      <div class="empty-state" id="emptyState">
+        <p>No headers added yet.</p>
+        <p class="text-muted">Click below to add a header.</p>
+      </div>
+    </div>
+
+    <!-- Add Header -->
+    <div class="add-section">
+      <button class="btn btn-primary" id="addHeaderBtn">+ Add Header</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="status" id="ruleStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Inactive</span>
+      </div>
+      <div class="footer-actions">
+        <button class="btn-text" id="exportBtn">Export</button>
+        <button class="btn-text" id="importBtn">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Dialog -->
+  <div class="modal-overlay" id="importModal" style="display:none;">
+    <div class="modal">
+      <h3>Import Configuration</h3>
+      <textarea id="importText" class="textarea" placeholder="Paste JSON configuration..."></textarea>
+      <div class="modal-actions">
+        <button class="btn" id="importCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="importConfirmBtn">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

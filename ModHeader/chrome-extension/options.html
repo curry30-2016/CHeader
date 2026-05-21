@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModHeader - Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>ModHeader <span class="subtitle">Options</span></h1>
+      <a href="#" id="backLink" class="back-link">← Back to Popup</a>
+    </header>
+
+    <section class="section">
+      <h2>Profiles</h2>
+      <div class="profile-management">
+        <div class="profile-list" id="profileList"></div>
+        <button class="btn btn-primary" id="addProfileBtn">+ New Profile</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Import / Export</h2>
+      <div class="io-grid">
+        <div class="io-card">
+          <h3>Export</h3>
+          <p class="text-muted">Download all profiles and headers as JSON.</p>
+          <button class="btn" id="exportBtn">Download JSON</button>
+        </div>
+        <div class="io-card">
+          <h3>Import</h3>
+          <p class="text-muted">Import a previously exported JSON configuration.</p>
+          <textarea id="importText" class="textarea" placeholder="Paste JSON here..."></textarea>
+          <button class="btn btn-primary" id="importBtn">Import</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>About</h2>
+      <div class="about-card">
+        <p><strong>ModHeader</strong> — Modify HTTP request and response headers.</p>
+        <p class="text-muted">Version 1.0.0 | Uses <code>declarativeNetRequest</code> API</p>
+        <p class="text-muted">Headers are applied only when the extension is enabled and at least one header is active.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>
